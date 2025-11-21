@@ -31,7 +31,7 @@ public class StatementPrinter {
                     p.getAudience()));
         }
         result.append(String.format("Amount owed is %s%n", usd(getTotalAmount())));
-        result.append(String.format("You earned %s credits%n", getTotalVolumeCredit()));
+        result.append(String.format("You earned %s credits%n", getTotalVolumeCredits()));
         return result.toString();
     }
 
@@ -43,7 +43,7 @@ public class StatementPrinter {
         return result;
     }
 
-    private int getTotalVolumeCredit() {
+    private int getTotalVolumeCredits() {
         int resilt = 0;
         for (Performance p : getInvoice().getPerformances()) {
             resilt += getVolumeCredits(p);
